@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides | EcoNation</title>
+    <!-- KÜLÖNÁLLÓ STÍLUSLAP BEOLVASÁSA -->
+    <link rel="stylesheet" href="guides.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-dragon logo-icon"></i>
+            <div>
+                <h1>EcoNation</h1>
+                <span>MINECRAFT SERVER</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="features.html">FEATURES</a>
+            <a href="donation.html">DONATION</a>
+            <a href="team.html">TEAM</a>
+            <a href="guides.html" class="active">GUIDES</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <a href="https://discord.gg/m4BbMYaRWH" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> JOIN DISCORD</a>
+    </header>
+
+    <section class="hero-sub">
+        <div class="sub-content">
+            <h2>ÚTMUTATÓK / <span class="red-text">GUIDES</span></h2>
+        </div>
+    </section>
+
+    <main class="page-container">
+        <div class="guides-container">
+            
+            <!-- 1. Útmutató -->
+            <div class="guide-item">
+                <div class="guide-header" onclick="toggleGuide(this)">
+                    <h3>Hogyan tudok csatlakozni a szerverre?</h3>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="guide-content">
+                    <p>A szerver nyitása után indítsd el a Minecraftot (ajánlott verzió: 1.20.x vagy újabb), kattints a Multiplayer (Többjátékos mód) menüpontra, majd az Add Server (Szerver hozzáadása) gombra. Az IP cím mezőbe írd be a főoldalon található címet. Jelenleg a szerver zárt fejlesztés alatt áll, így a belépés még nem lehetséges.</p>
+                </div>
+            </div>
+
+            <!-- 2. Útmutató -->
+            <div class="guide-item">
+                <div class="guide-header" onclick="toggleGuide(this)">
+                    <h3>Mik azok a sárkány tojások és mire jók?</h3>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="guide-content">
+                    <p>A sárkány tojások a szerverünk egyik legértékesebb fizetőeszközei és nyersanyagai. Különböző egyedi Boss harcok, eventek vagy nehéz küldetések teljesítése során szerezheted meg őket. A spawn területén található Sárkány kalmárnál (NPC) válthatod be őket exkluzív fegyverekre, páncélokra és különleges kozmetikai kiegészítőkre.</p>
+                </div>
+            </div>
+
+            <!-- 3. Útmutató -->
+            <div class="guide-item">
+                <div class="guide-header" onclick="toggleGuide(this)">
+                    <h3>Hogyan védhetem le a területemet?</h3>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="guide-content">
+                    <p>A Griefing (rombolás) elkerülése érdekében egy teljesen egyedi, parancsalapú levédési rendszert használunk. Az első lehelyezett ládád automatikusan levéd egy alap területet körülötte, amit később az aranyásó szerszámmal vagy parancsok segítségével növelhetsz. Részletes parancslistát a játékban a /szabályzat vagy /claim menüpontban találsz.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="status-box">
+                <h4>SERVER STATUS <span class="status-maintenance">• FEJLESZTÉS ALATT</span></h4>
+                <div class="stats-row">
+                    <div><strong>0</strong><span>PLAYERS ONLINE</span></div>
+                    <div><strong>0</strong><span>PEAK TODAY</span></div>
+                    <div><strong>--%</strong><span>UPTIME</span></div>
+                    <div><strong>24/7</strong><span>DEV MODE</span></div>
+                </div>
+            </div>
+            <div class="footer-discord">
+                <h4>DISCORD COMMUNITY</h4>
+                <p>Csatlakozz a Discord szerverünkhöz, hogy elsőként értesülj a nyitásról!</p>
+                <a href="https://discord.gg/m4BbMYaRWH" target="_blank" class="btn-discord-large"><i class="fa-brands fa-discord"></i> JOIN DISCORD</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoNation. Minden jog fenntartva.</p>
+            <div class="social-icons">
+                <a href="https://discord.gg/m4BbMYaRWH" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Apró szkript a lenyíló animációhoz -->
+    <script>
+        function toggleGuide(header) {
+            const item = header.parentElement;
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

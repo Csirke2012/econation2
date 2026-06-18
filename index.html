@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoNation | Minecraft Server</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Betűtípus és Ikonok (FontAwesome) -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Navigációs sáv -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-dragon logo-icon"></i>
+            <div>
+                <h1>EcoNation</h1>
+                <span>MINECRAFT SERVER</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="features.html">FEATURES</a>
+            <a href="donation.html">DONATION</a>
+            <a href="team.html">TEAM</a>
+            <a href="guides.html">GUIDES</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <!-- IDE KERÜLT A LINK -->
+        <a href="https://discord.gg/m4BbMYaRWH" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> JOIN DISCORD</a>
+    </header>
+
+    <!-- Fő hős szekció (Hero) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>BELÉPÉS EGY ÚJ</h2>
+            <h2 class="red-text animate-pulse">SZINTRE</h2>
+            <p class="hero-desc">
+                Az EcoNation egy prémium sárkány-tematikájú Minecraft szerver lesz. <br>
+                Jelenleg gőzerővel dolgozunk az egyedi rendszereken és világokon!
+            </p>
+
+            <!-- IP Másolás Szekció (Fejlesztés alatt lezárva) -->
+            <div class="ip-container">
+                <div class="ip-box">
+                    <span class="label">SERVER IP</span>
+                    <span class="ip-text" id="serverIp">Hamarosan...</span>
+                </div>
+                <button class="btn-copy" onclick="copyIp()" disabled style="cursor: not-allowed; background-color: #3f0c10;"><i class="fa-solid fa-lock"></i> LOCK</button>
+            </div>
+
+            <button class="btn-play dev-mode"><i class="fa-solid fa-screwdriver-wrench"></i> FEJLESZTÉS ALATT</button>
+
+            <div class="player-count">
+                <span class="online-dot maintenance"></span> <strong>KARBANTARTÁS</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jellemzők (Features) Szekció -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="card-icon"><i class="fa-solid fa-swords"></i></div>
+            <h3>EPIC PVP</h3>
+            <p>Harcolj egyedi arénákban és urald a ranglistákat.</p>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon"><i class="fa-solid fa-cube"></i></div>
+            <h3>CUSTOM WORLDS</h3>
+            <p>Fedezz fel egyedi világokat, amik kalandra épültek.</p>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon"><i class="fa-solid fa-skull"></i></div>
+            <h3>BOSS RAIDS</h3>
+            <p>Álljatok össze csapatba és győzzétek le a sárkányokat.</p>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+            <h3>AKTÍV COMMUNITY</h3>
+            <p>Csatlakozz egy barátságos és folyamatosan növekvő közösséghez.</p>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon"><i class="fa-solid fa-calendar-star"></i></div>
+            <h3>HETI EVENTEK</h3>
+            <p>Vegyél részt heti eseményeken és nyerj exkluzív jutalmakat.</p>
+        </div>
+    </section>
+
+    <!-- Lábléc és Státusz (Footer) -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="status-box">
+                <h4>SERVER STATUS <span class="status-maintenance">• FEJLESZTÉS ALATT</span></h4>
+                <div class="stats-row">
+                    <div><strong>0</strong><span>PLAYERS ONLINE</span></div>
+                    <div><strong>0</strong><span>PEAK TODAY</span></div>
+                    <div><strong>--%</strong><span>UPTIME</span></div>
+                    <div><strong>24/7</strong><span>DEV MODE</span></div>
+                </div>
+            </div>
+            
+            <div class="footer-discord">
+                <h4>DISCORD COMMUNITY</h4>
+                <p>Csatlakozz a Discord szerverünkhöz, hogy elsőként értesülj a nyitásról!</p>
+                <!-- IDE IS KERÜLT A LINK -->
+                <a href="https://discord.gg/m4BbMYaRWH" target="_blank" class="btn-discord-large"><i class="fa-brands fa-discord"></i> JOIN DISCORD</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoNation. Minden jog fenntartva.</p>
+            <div class="social-icons">
+                <!-- AZ IKONOK KÖZÜL A DISCORDRA IS RÁKERÜLT -->
+                <a href="https://discord.gg" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyIp() {
+            alert('A szerver jelenleg zárt fejlesztési fázisban van!');
+        }
+    </script>
+</body>
+</html>
