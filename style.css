@@ -1,0 +1,342 @@
+/* Alapbeállítások resetelése */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #070202;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Navigációs sáv stílusa */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(to bottom, rgba(7, 2, 2, 0.9), rgba(7, 2, 2, 0));
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 2.2rem;
+    color: #ef4444;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    font-size: 0.7rem;
+    color: #ef4444;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #ef4444;
+    padding-bottom: 5px;
+}
+
+.btn-discord {
+    background-color: #5865F2;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-discord:hover {
+    background-color: #4752c4;
+}
+
+/* Fő hős (Hero) szekció az eco-hater.jpg háttereddel */
+.hero {
+    height: 100vh;
+    width: 100%;
+    /* Sötét réteget tesz a kép elé, hogy a fehér betűk jól látszódjanak a láva mellett is */
+    background: linear-gradient(to right, rgba(7, 2, 2, 0.95) 35%, rgba(7, 2, 2, 0.4)), 
+                url('eco-hater.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    position: relative;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+.red-text {
+    color: #ef4444;
+    text-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+}
+
+.hero-desc {
+    color: #9ca3af;
+    margin-top: 20px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* IP Box dizájn */
+.ip-container {
+    display: flex;
+    margin-top: 35px;
+    max-width: 400px;
+    border: 1px solid #450a0a;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: rgba(24, 9, 9, 0.6);
+}
+
+.ip-box {
+    padding: 10px 20px;
+    flex-grow: 1;
+}
+
+.ip-box .label {
+    display: block;
+    font-size: 0.65rem;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.ip-box .ip-text {
+    font-size: 1rem;
+    color: #fca5a5;
+    font-weight: 600;
+}
+
+.btn-copy {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.btn-play {
+    display: block;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #7f1d1d, #ef4444);
+    color: white;
+    border: none;
+    width: 250px;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Fejlesztés alatti dizájn a gombnak */
+.btn-play.dev-mode {
+    background: #1f1212;
+    border: 1px dashed #ef4444;
+    color: #fca5a5;
+    box-shadow: none;
+    cursor: default;
+}
+
+.player-count {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Sárga villogó karbantartás lámpa */
+.online-dot.maintenance {
+    width: 8px;
+    height: 8px;
+    background-color: #f59e0b;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px #f59e0b;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* Jellemzők kártyák rácsa */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 60px 10%;
+    background-color: #0c0404;
+}
+
+.feature-card {
+    background-color: rgba(28, 11, 11, 0.4);
+    border: 1px solid rgba(239, 68, 68, 0.1);
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: #ef4444;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.feature-card p {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    line-height: 1.5;
+}
+
+/* Lábléc (Footer) */
+.footer {
+    background-color: #070202;
+    padding: 60px 10% 20px 10%;
+    border-top: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.status-box h4, .footer-discord h4 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.status-maintenance {
+    color: #f59e0b;
+    margin-left: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(28, 11, 11, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.stats-row strong {
+    display: block;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.stats-row span {
+    font-size: 0.7rem;
+    color: #6b7280;
+}
+
+.footer-discord p {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.btn-discord-large {
+    display: inline-block;
+    background-color: #5865F2;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #4b5563;
+}
+
+.social-icons a {
+    color: #4b5563;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ef4444;
+}
+
+/* Szöveg animáció */
+.animate-pulse {
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; text-shadow: 0 0 40px rgba(239, 68, 68, 0.9); }
+}
+
+/* Mobil nézet optimalizáció */
+@media (max-width: 768px) {
+    .navbar { padding: 20px; }
+    .nav-links { display: none; }
+    .hero { padding-left: 5%; }
+    .hero-content h2 { font-size: 2.8rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .stats-row { flex-wrap: wrap; gap: 15px; }
+}

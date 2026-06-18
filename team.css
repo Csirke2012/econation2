@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #070202;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(to bottom, rgba(7, 2, 2, 0.9), rgba(7, 2, 2, 0));
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-icon { font-size: 2.2rem; color: #ef4444; }
+.logo h1 { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; }
+.logo span { font-size: 0.7rem; color: #ef4444; display: block; letter-spacing: 1px; }
+.nav-links a { color: #b3b3b3; text-decoration: none; margin: 0 15px; font-size: 0.85rem; font-weight: 600; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: #ffffff; border-bottom: 2px solid #ef4444; padding-bottom: 5px; }
+.btn-discord { background-color: #5865F2; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; font-size: 0.8rem; font-weight: 600; transition: background 0.3s; }
+.btn-discord:hover { background-color: #4752c4; }
+
+.team-section {
+    padding: 160px 1% 80px 1%;
+    background-color: #070202;
+    text-align: center;
+}
+
+.team-title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.team-subtitle {
+    color: #9ca3af;
+    font-size: 1.05rem;
+    margin-bottom: 60px;
+}
+
+.team-pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.team-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 45px; /* Megnövelt gap, hogy a kétoldalas lenyílók kényelmesen elférjenek egymás mellett */
+    width: 100%;
+}
+
+.team-card {
+    background-color: rgba(28, 11, 11, 0.4);
+    border: 1px solid rgba(239, 68, 68, 0.1);
+    border-radius: 8px;
+    padding: 40px 25px;
+    width: 220px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.team-card.card-developer:hover {
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+}
+
+.card-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 14px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.badge-tulaj { background-color: #ef4444; color: white; box-shadow: 0 0 15px rgba(239, 68, 68, 0.5); }
+.badge-manager { background-color: #f59e0b; color: black; }
+.badge-developer { background-color: #a855f7; color: white; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
+.badge-foadmin { background-color: #b91c1c; color: white; }
+.badge-builder { background-color: #10b981; color: white; }
+.badge-mod { background-color: #3b82f6; color: white; }
+.badge-helper { background-color: #06b6d4; color: white; }
+
+.avatar-box {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(239, 68, 68, 0.1);
+    background-color: #1c0b0b;
+}
+
+.card-developer .avatar-box { border: 2px solid rgba(168, 85, 247, 0.2); }
+.avatar-box img { width: 100%; height: 100%; object-fit: cover; }
+.team-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; }
+.rank-name { font-size: 0.75rem; color: #6b7280; font-weight: 600; text-transform: uppercase; }
+.purple-text { color: #a855f7; text-shadow: 0 0 30px rgba(168, 85, 247, 0.6); }
+
+/* ==========================================================================
+   LENYÍLÓ OSZLOPOK MECHANIZMUSA
+   ========================================================================== */
+.admin-sub-column, .mh-sub-column, .builder-sub-column {
+    position: absolute;
+    width: 240px;
+    background-color: #0c0404;
+    border: 1px solid #450a0a;
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 99;
+    display: none;
+    opacity: 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(239, 68, 68, 0.05);
+}
+
+.sub-column-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+.title-green { color: #10b981; border-color: rgba(16, 185, 129, 0.2); }
+.title-yellow { color: #f59e0b; border-color: rgba(245, 158, 11, 0.2); }
+.title-blue { color: #3b82f6; border-color: rgba(59, 130, 246, 0.2); }
+.title-cyan { color: #06b6d4; border-color: rgba(6, 182, 212, 0.2); }
+
+.sub-admin-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background-color: rgba(28, 11, 11, 0.3);
+    margin-bottom: 8px;
+    text-align: left;
+}
+.sub-admin-row:last-child { margin-bottom: 0; }
+.sub-admin-row img { width: 35px; height: 35px; border-radius: 4px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.1); background-color: #1c0b0b; }
+.sub-admin-row h4 { font-size: 0.85rem; font-weight: 600; color: #ffffff; }
+.sub-admin-row span { font-size: 0.65rem; color: #9ca3af; display: block; }
+
+.foadmin-dropdown-group, .modhelper-dropdown-group, .builder-dropdown-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 1. FŐADMINOK (Kifelé nyílnak) */
+.dropdown-left .admin-sub-column { right: 105%; top: 0; }
+.dropdown-right .admin-sub-column { left: 105%; top: 0; }
+
+.foadmin-dropdown-group:hover .admin-sub-column {
+    display: block;
+    opacity: 1;
+    animation: fadeSide 0.3s ease forwards;
+}
+
+/* 2. BUILDER KÉTOLDALI JELENÉSE */
+.builder-sub-column.side-left { right: 105%; top: 0; border-color: rgba(16, 185, 129, 0.3); }
+.builder-sub-column.side-right { left: 105%; top: 0; border-color: rgba(245, 158, 11, 0.3); }
+
+.builder-dropdown-group:hover .builder-sub-column {
+    display: block;
+    opacity: 1;
+    animation: fadeSide 0.3s ease forwards;
+}
+
+/* 3. MOD / HELPER KÉTOLDALI JELENÉSE */
+.mh-sub-column.side-left { right: 105%; top: 0; border-color: rgba(59, 130, 246, 0.3); }
+.mh-sub-column.side-right { left: 105%; top: 0; border-color: rgba(6, 182, 212, 0.3); }
+
+.modhelper-dropdown-group:hover .mh-sub-column {
+    display: block;
+    opacity: 1;
+    animation: fadeSide 0.3s ease forwards;
+}
+
+@keyframes fadeSide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Lábléc */
+.footer { background-color: #070202; padding: 60px 10% 20px 10%; border-top: 1px solid rgba(239, 68, 68, 0.1); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; margin-bottom: 40px; }
+.status-box h4, .footer-discord h4 { font-size: 1rem; margin-bottom: 20px; letter-spacing: 1px; }
+.status-maintenance { color: #f59e0b; margin-left: 10px; font-size: 0.85rem; font-weight: bold; }
+.stats-row { display: flex; justify-content: space-between; background-color: rgba(28, 11, 11, 0.3); padding: 20px; border-radius: 8px; }
+.stats-row strong { display: block; font-size: 1.4rem; color: #ffffff; }
+.stats-row span { font-size: 0.7rem; color: #6b7280; }
+.footer-discord p { font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px; }
+.btn-discord-large { display: inline-block; background-color: #5865F2; color: white; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 20px; font-size: 0.8rem; color: #4b5563; }
+.social-icons a { color: #4b5563; font-size: 1.2rem; margin-left: 15px; transition: color 0.3s; }
+.social-icons a:hover { color: #ef4444; }
+.red-text { color: #ef4444; text-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+.animate-pulse { animation: pulse 3s infinite; }
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; text-shadow: 0 0 40px rgba(239, 68, 68, 0.9); }
+}
+
+/* Mobil nézet */
+@media (max-width: 1250px) {
+    .team-row { flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .admin-sub-column, .mh-sub-column, .builder-sub-column { position: static !important; transform: none !important; width: 100% !important; margin-top: 15px; }
+    .modhelper-dropdown-group:hover .mh-sub-column, .foadmin-dropdown-group:hover .admin-sub-column, .builder-dropdown-group:hover .builder-sub-column { animation: none; }
+}

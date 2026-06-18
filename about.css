@@ -1,0 +1,231 @@
+/* Alapbeállítások és Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #070202;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Navigáció */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #070202;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.1);
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 2.2rem;
+    color: #ef4444;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    font-size: 0.7rem;
+    color: #ef4444;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #ef4444;
+    padding-bottom: 5px;
+}
+
+.btn-discord {
+    background-color: #5865F2;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-discord:hover {
+    background-color: #4752c4;
+}
+
+/* Aloldal Fejléc */
+.hero-sub {
+    height: 35vh;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(7, 2, 2, 0.8), rgba(12, 4, 4, 1)), url('eco-hater.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sub-content h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.red-text {
+    color: #ef4444;
+    text-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+}
+
+/* Tartalom Boxok */
+.page-container {
+    padding: 60px 10%;
+    background-color: #0c0404;
+    min-height: 40vh;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.about-box {
+    background-color: rgba(28, 11, 11, 0.4);
+    border: 1px solid rgba(239, 68, 68, 0.1);
+    padding: 40px;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.about-box:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.about-box h3 {
+    font-size: 1.6rem;
+    color: #ef4444;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.about-box p {
+    color: #9ca3af;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Lábléc */
+.footer {
+    background-color: #070202;
+    padding: 60px 10% 20px 10%;
+    border-top: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.status-box h4, .footer-discord h4 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.status-maintenance {
+    color: #f59e0b;
+    margin-left: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(28, 11, 11, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.stats-row strong {
+    display: block;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.stats-row span {
+    font-size: 0.7rem;
+    color: #6b7280;
+}
+
+.footer-discord p {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.btn-discord-large {
+    display: inline-block;
+    background-color: #5865F2;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #4b5563;
+}
+
+.social-icons a {
+    color: #4b5563;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 20px; }
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 20px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .stats-row { flex-wrap: wrap; gap: 15px; }
+}
